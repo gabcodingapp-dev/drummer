@@ -6,13 +6,16 @@ import android.os.Bundle
 import android.provider.Settings
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Button
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.unit.dp
 import com.example.autodrum.data.DrumDatabase
 import com.example.autodrum.data.DrumRepository
 import com.example.autodrum.service.DrumMacroOverlayService
@@ -31,10 +34,16 @@ class MainActivity : ComponentActivity() {
         setContent {
             MaterialTheme {
                 Surface(modifier = Modifier.fillMaxSize()) {
-                    Column {
+                    Box(modifier = Modifier.fillMaxSize()) {
                         MainScreen(viewModel)
-                        Button(onClick = { startOverlay() }) {
-                            Text("Start Overlay")
+                        
+                        Button(
+                            onClick = { startOverlay() },
+                            modifier = Modifier
+                                .align(Alignment.BottomCenter)
+                                .padding(24.dp)
+                        ) {
+                            Text("START OVERLAY")
                         }
                     }
                 }
