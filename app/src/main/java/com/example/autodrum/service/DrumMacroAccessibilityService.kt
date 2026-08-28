@@ -19,7 +19,7 @@ class DrumMacroAccessibilityService : AccessibilityService() {
         val stroke = GestureDescription.StrokeDescription(path, 0, 50)
         val gesture = GestureDescription.Builder().addStroke(stroke).build()
         
-        dispatchGesture(gesture, object : GestureResultCallback() {
+        dispatchGesture(gesture, object : AccessibilityService.GestureResultCallback() {
             override fun onCompleted(gestureDescription: GestureDescription?) {
                 Log.d("DrumMacro", "Tap completed at $x, $y")
             }
