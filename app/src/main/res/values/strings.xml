@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">AutoDrum</string>
+    <string name="accessibility_service_description">Injects synthetic screen taps for DrumMacro.</string>
+</resources>
